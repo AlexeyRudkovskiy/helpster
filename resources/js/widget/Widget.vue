@@ -138,7 +138,7 @@ const toggleWidget = () => {
     <CommentQuestion size="32" class="text-white"></CommentQuestion>
     <span v-if="unreadMessages > 0" class="absolute inline-block -top-2 -right-2 text-sm bg-red-500 px-3 py-1 rounded-full text-white">{{ unreadMessages }}</span>
   </div>
-  <div class="chat-container w-96 shadow-xl rounded-xl overflow-hidden" v-if="widgetState">
+  <div class="chat-container w-96 shadow-xl rounded-xl overflow-hidden bg-white" v-if="widgetState">
     <div class="p-4 py-5 bg-sky-500 text-white font-bold rounded-t-xl relative">
       <div>Підтримка користувачів</div>
       <WindowMinimize class="absolute top-3 right-3 p-2 rounded rounded-lg hover:bg-sky-400 cursor-pointer" @click="toggleWidget"></WindowMinimize>
