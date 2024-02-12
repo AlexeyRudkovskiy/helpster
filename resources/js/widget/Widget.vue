@@ -44,7 +44,7 @@ if (chat.value !== null) {
     emit('join', { chatId: chat.value })
   }, 100)
 
-  axios.get(`https://ws-backend.test/api/widget/chat/${chat.value}?app_id=${window.helpster.app_id}`)
+  axios.get(`https://helpster.pics/api/widget/chat/${chat.value}?app_id=${window.helpster.app_id}`)
     .then(response => response.data)
     .then(response => {
       messagesArray = response
@@ -83,7 +83,7 @@ const sendMessage = () => {
 
   if (chat.value === null) {
     /// Create chat
-    axios.post('https://ws-backend.test/api/widget/chat', {
+    axios.post('https://helpster.pics/api/widget/chat', {
       ...window.helpster.params,
       app_id: window.helpster.app_id,
       message: message.value
@@ -111,7 +111,7 @@ const sendMessage = () => {
       })
       .then(() => message.value = '');
   } else {
-    axios.post(`https://ws-backend.test/api/widget/chat/${chat.value}`, {
+    axios.post(`https://helpster.pics/api/widget/chat/${chat.value}`, {
       message: message.value
     })
       .then(response => response.data)

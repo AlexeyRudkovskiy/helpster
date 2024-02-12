@@ -7,7 +7,7 @@ import Widget from "./Widget.vue";
 import axios from "axios";
 
 function initHelpster(appId, params) {
-  axios.get(`https://ws-backend.test/api/config?app_id=${appId}`)
+  axios.get(`https://helpster.pics/api/config?app_id=${appId}`)
     .then(response => response.data)
     .then(response => {
       const assets = response.assets;
@@ -39,7 +39,7 @@ function initHelpster(appId, params) {
 
 window.initHelpster = initHelpster;
 
-const socket = new WebSocket('ws://localhost:8080');
+const socket = new WebSocket('142.93.168.9:8080');
 
 socket.addEventListener('message', (e) => {
   let data = e.data;
