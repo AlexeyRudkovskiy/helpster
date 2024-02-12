@@ -13,7 +13,7 @@
             name: '{{ auth()->user()->name }}'
             @endif
         };
-        initHelpster('c13b17cb-c351-31b5-bc52-cf7825be1f6e', params);
+        initHelpster('850560ff-4f63-3b92-8ce3-c97833d25794', params);
     })
 </script>
 </body>
