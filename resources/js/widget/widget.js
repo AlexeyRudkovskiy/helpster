@@ -7,8 +7,7 @@ import Widget from "./Widget.vue";
 import axios from "axios";
 
 function initHelpster(appId, params) {
-  axios.get('https://ws-backend.test/sanctum/csrf-cookie')
-    .then(() => axios.get(`https://ws-backend.test/api/config?app_id=${appId}`))
+  axios.get(`https://ws-backend.test/api/config?app_id=${appId}`)
     .then(response => response.data)
     .then(response => {
       const assets = response.assets;
