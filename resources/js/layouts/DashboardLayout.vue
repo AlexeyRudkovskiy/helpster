@@ -24,11 +24,19 @@ onMounted(() => {
 
 const registerInSocket = () => {
   const { value: authorizedUser } = user;
-
-  emit('register', {
-    id: 'agent_' + authorizedUser.id,
-    organization_id: user.value.organization_id
-  });
+  if (globalState.socket.readyState === 1) {
+    emit('register', {
+      id: 'agent_' + authorizedUser.id,
+      organization_id: user.value.organization_id
+    });
+  } else {
+    globalState.socket.addEventListener('open', function () {
+      emit('register', {
+        id: 'agent_' + authorizedUser.id,
+        organization_id: user.value.organization_id
+      });
+    })
+  }
 }
 
 const navigate = (url) => {

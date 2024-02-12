@@ -35,7 +35,7 @@ const scrollToBottom = () => {
   }, 10);
 }
 
-if (chat.value !== null) {
+const register = () => {
   emit('register', {
     id: customer.value
   });
@@ -43,6 +43,16 @@ if (chat.value !== null) {
   setTimeout(() => {
     emit('join', { chatId: chat.value })
   }, 100)
+}
+
+if (chat.value !== null) {
+  if (globalState.socket.readyState === 1) {
+    register();
+  } else {
+    globalState.socket.addEventListener('open', function () {
+      register();
+    });
+  }
 
   axios.get(`https://helpster.pics/api/widget/chat/${chat.value}?app_id=${window.helpster.app_id}`)
     .then(response => response.data)
