@@ -52,7 +52,7 @@ app.use(router);
 app.mount('#app')
 
 
-const socket = new WebSocket('142.93.168.9:8080');
+const socket = new WebSocket('wss://142.93.168.9:8080');
 
 socket.addEventListener('message', (e) => {
   let data = e.data;
