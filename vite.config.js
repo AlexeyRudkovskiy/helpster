@@ -2,15 +2,15 @@ import { defineConfig } from 'vite';
 import path from 'path'
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
+import resolve from "resolve";
 
 export default defineConfig({
-    plugins: [
+  plugins: [
         laravel({
             input: [
               'resources/css/app.css',
               'resources/js/app.js',
-              'resources/css/widget.css',
-              'resources/js/widget.js'
+              'resources/css/widget.css'
             ],
             refresh: true,
         }),

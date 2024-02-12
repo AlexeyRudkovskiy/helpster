@@ -1,11 +1,9 @@
-import './bootstrap';
+import '../bootstrap.js';
 
 import { createApp } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
-import { state as globalState, emitter } from "./global-state.js";
+import { state as globalState, emitter } from "../global-state.js";
 
-import App from './App.vue'
-import Widget from "./widget/Widget.vue";
+import Widget from "./Widget.vue";
 import axios from "axios";
 
 function initHelpster(appId, params) {

@@ -1,10 +1,10 @@
-<script setup lang="ts">
+<script setup>
 import sendIcon from './send-icon.svg'
 import {nextTick, ref} from "vue";
 import axios from "axios";
-import { Messages } from '@/classes/Messages'
-import { Message, MessageGroup } from '@/ui/Messages'
-import { state as globalState, emitter, emit } from "@/global-state.js";
+import { Messages } from '../classes/Messages'
+import { Message, MessageGroup } from '../ui/Messages'
+import { state as globalState, emitter, emit } from "../global-state.js";
 import Attachment from "vue-material-design-icons/Attachment.vue";
 import CommentQuestion from "vue-material-design-icons/CommentQuestion.vue";
 import WindowMinimize from "vue-material-design-icons/WindowMinimize.vue";
