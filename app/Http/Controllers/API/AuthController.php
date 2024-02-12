@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
+use Ramsey\Uuid\Uuid;
 
 class AuthController extends Controller
 {
@@ -42,6 +43,7 @@ class AuthController extends Controller
 
         $organization = new Organization();
         $organization->name = $request->get('organization_name');
+        $organization->app_id = Uuid::uuid4();
         $organization->save();
 
         $user = new User();
