@@ -16,7 +16,6 @@ function initHelpster(appId, params) {
         const type = asset.type;
         if (type === 'style') {
           const style = document.createElement('link');
-          console.log(asset);
           style.setAttribute('rel', 'stylesheet');
           style.setAttribute('href', asset.path);
           document.head.appendChild(style);
