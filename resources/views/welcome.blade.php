@@ -6,7 +6,7 @@
 <body class="bg-slate-100">
 <div id="app"></div>
 <script>
-    window.widget_path = '{{ Vite::asset('resources/js/widget.js') }}';
+    window.widget_path = '{{ asset('widget/bundle.js') }}';
 </script>
 @vite('resources/js/app.js')
 </body>

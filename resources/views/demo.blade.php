@@ -4,7 +4,7 @@
 </head>
 <body>
 <div>hello world</div>
-@vite('resources/js/widget.js')
+<script src="https://helpster.pics/widget/bundle.js"></script>
 <script>
     window.addEventListener('load', function () {
         const params = {
