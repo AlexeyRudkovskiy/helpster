@@ -52,14 +52,15 @@ app.use(router);
 app.mount('#app')
 
 
-const socket = new WebSocket('wss://142.93.168.9:8080');
+const socket = new WebSocket('wss://ws.helpster.pics');
+socket.addEventListener('open', function () {
+  socket.addEventListener('message', (e) => {
+    let data = e.data;
+    data = JSON.parse(data);
+    const { event, payload } = data;
 
-socket.addEventListener('message', (e) => {
-  let data = e.data;
-  data = JSON.parse(data);
-  const { event, payload } = data;
-
-  emitter.emit('socket:event', event, payload);
+    emitter.emit('socket:event', event, payload);
+  });
 });
 
 
